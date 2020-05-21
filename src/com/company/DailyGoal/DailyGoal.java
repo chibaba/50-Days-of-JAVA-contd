@@ -2,6 +2,10 @@ package com.company.DailyGoal;
 
 import com.company.fitness.Steps;
 
+import java.time.DayOfWeek;
+import java.util.ArrayList;
+import java.util.List;
+
 public class DailyGoal {
     int dailyGoal  = 10000;
 
@@ -9,6 +13,7 @@ public class DailyGoal {
         if (steps.getSteps() >= dailyGoal) {
             return true;
         }
-        return false
+        return false;
     }
+
 }
