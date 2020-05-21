@@ -3,6 +3,7 @@ package com.company.DailyGoal;
 import com.company.fitness.Steps;
 
 import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,7 +43,18 @@ public class WeeklySteps {
             }
             builder.append(steps.getDate().getDayOfWeek());
             builder.append(" ");
+            builder.append(steps.getSteps());
+            DayOfWeek best = bestDay();
+            if(steps.getDate().getDayOfWeek() == best) {
+                builder.append("**** BEST DAY!");
+            }
+            builder.append("\n");
         }
+        return builder.toString();
+    }
+
+    public void addDailySteps (int steps, LocalDate date) {
+        dailySteps.add(new Steps (steps, date));
     }
 
 
